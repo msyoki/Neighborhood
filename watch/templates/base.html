@@ -21,8 +21,18 @@
     <title>Awwards</title>
   </head>
   <body>
-    {% include 'navbar.html' %} 
-    {% block content %} {%endblock%}
+    {% include 'navbar.html' %}
+    <!--Main Layout-->
+    <main class="text-center py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"> 
+                    {% block content %} {%endblock%}
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--Main Layout-->
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
