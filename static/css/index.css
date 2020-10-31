@@ -1,7 +1,7 @@
 .view {
     background: url("https://images.pexels.com/photos/1654330/pexels-photo-1654330.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")no-repeat center center;
     background-size: cover;
-    opacity: 0.94;
+    opacity: 0.95;
 }
 
 .navbar {
@@ -9,12 +9,12 @@
 }
 
 .top-nav-collapse {
-    background-color: #f26419;
+    background-color: #76b852;
 }
 
 @media only screen and (max-width: 768px) {
     .navbar {
-        background-color: #f26419;
+        background-color: #76b852;
     }
 }
 
@@ -29,7 +29,7 @@ header,
 .home-text{
     text-align: center;
     position: absolute;
-    top: 45%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

@@ -7,15 +7,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if title %}
-    <title>Awwards - {{title}}</title>
+    <title>Neighborhood Watch - {{title}}</title>
     {% else %}
-      <title>Awwards </title>
+      <title>Neighborhood Watch  </title>
     {% endif %}
     
     {% block styles %}
       {% bootstrap_css %}
       <link rel="stylesheet" href="{% static 'css/index.css' %}">
-      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
       
     {% endblock %}
     <title>Awwards</title>
@@ -24,13 +24,13 @@
     {% include 'navbar.html' %}
     <!--Main Layout-->
     <main class="text-center py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12"> 
-                    {% block content %} {%endblock%}
-                </div>
-            </div>
-        </div>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12"> 
+                  {% block content %} {%endblock%}
+              </div>
+          </div>
+      </div>
     </main>
     <!--Main Layout-->
     {% block scripts %}
@@ -41,3 +41,4 @@
     {% include 'footer.html' %} 
   </body>
 </html>
+
