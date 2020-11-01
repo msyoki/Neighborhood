@@ -1,11 +1,18 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile,Business
 from .forms import ProfileUpdateForm
 # Create your views here.
 def home(request):
-    return render(request,'watch/home.html')
+    
+    return render(request,'watch/home.html',)
+
+
+def contacts(request):
+    neighborhood=request.user.profile.neighborhood
+    businesses=Business.objects.filter(neighborhood=neighborhood).all
+    return render(request,'watch/profile/contactlist.html',{'businesses':businesses})
 
 def sign_up(request):
     if request.method =='POST':
