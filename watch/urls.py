@@ -6,6 +6,7 @@ from . import views
 urlpatterns=[
     url(r'^$',views.home,name='home'),
     url('register/',views.sign_up, name='register'),
+    url('profile/',views.profile, name='profile'),
 
 ]
 if settings.DEBUG:
