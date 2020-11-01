@@ -17,6 +17,36 @@
                 </div>
             {% endfor %}
         </div>
+    </div><br><br>
+    <div class="container">
+        <h1 style="color:white;text-align:center;"><strong>Police Authorities </strong>in {{user.profile.neighborhood}} </h1><br><br>
+        <div >
+            {% for authority in authorities %}
+                <div class="container">
+                    <div class="card ">
+                        <div class="card-text text-center" style="padding: 20px;">
+                            <p style="font-weight: bold;">{{authority.name}}</p>
+                            <p>{{authority.contacts}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div><br><br>
+    <div class="container">
+        <h1 style="color:white;text-align:center;"><strong>Health Centers </strong>in {{user.profile.neighborhood}} </h1><br><br>
+        <div >
+            {% for hospital in hospitals %}
+                <div class="container">
+                    <div class="card ">
+                        <div class="card-text text-center" style="padding: 20px;">
+                            <p style="font-weight: bold;">{{hospital.name}}</p>
+                            <p>{{hospital.contacts}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
   
 </div>
