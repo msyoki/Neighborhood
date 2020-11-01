@@ -3,7 +3,9 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .models import Profile,Business,Authority,Hospital,Alert
 from .forms import ProfileUpdateForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required(login_url='login/') 
 def home(request):
     neighborhood=request.user.profile.neighborhood
     alerts=Alert.objects.filter(neighborhood=neighborhood).all
