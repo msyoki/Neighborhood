@@ -2,17 +2,27 @@
 {% block content %}
 <main>
 <div class="container">
-    <h3 style="color:#535250;text-align:center;"><strong>Businesses </strong>in {{user.profile.neighborhood}} </h3><br><br>
-    {% for business in businesses %}
-        <div class="container">
-            <div class="card ">
-                <div class="card-text text-center" style="padding: 20px;">
-                    <p style="font-weight: bold;">{{business.name}}</p>
-                    <p>{{business.neighborhood}}</p>
-                </div>
-            </div>
+    {% if user.is_authenticated %}
+    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident...</h3><br><br><hr>
+    <div class="container">
+        <h1 style="font-weight: bold;color:red">Alerts</h1>
+        {% for alert in alerts %}
+        <h3>{{alert.name}}</h3>
+        <p>{{alert.news}}</p>
+        <small class="text-muted">{{alert.post_date}}</small>
+        {% endfor %}
+
+    </div><br><br><hr>
+    <h2 style="font-weight: bold;">Directory</h2>
+    <a class="btn btn-lg btn-light" href="{% url 'contactlist' %}">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.pexels.com/photos/955081/pexels-photo-955081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="responsive" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">Click for more on contact details for Businesses,Local authorities & Health Centers in {{request.user.profile.neighborhood}}</p>
         </div>
-    {% endfor %}
+    </div>
+    </a>
+    {% endif %}
 </div>
 </main>
 {% endblock %}
