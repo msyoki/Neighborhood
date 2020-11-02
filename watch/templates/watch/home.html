@@ -4,7 +4,9 @@
 <main>
 <div class="container">
     {% if user.is_authenticated %}
-    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident</h3><br><br><hr>
+    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident</h3><br>
+    <h5 class="text-muted">NB: <strong> New User: </strong>For a better experience please update your profile and select neighborhood  <a class="btn btn-sm btn-info" href="{% url 'profile' %}">Profile</a></h5>
+    <br><hr>
     <div class="container">
         <h1 style="font-weight: bold;color:red">Alerts</h1>
         {% for alert in alerts %}
