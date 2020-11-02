@@ -1,21 +1,39 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 {% block content %}
 <main>
 <div class="container">
     {% if user.is_authenticated %}
-    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident...</h3><br><br><hr>
+    <h3 style="color:#535250;text-align:center;"><strong>Hi!</strong>  {{user.profile.neighborhood}} Resident</h3><br><br><hr>
     <div class="container">
         <h1 style="font-weight: bold;color:red">Alerts</h1>
         {% for alert in alerts %}
-        <h3>{{alert.name}}</h3>
-        <p>{{alert.news}}</p>
-        <small class="text-muted">{{alert.post_date}}</small>
+        <div class="card">
+            <div class="card-body">
+                <h3>{{alert.title}}</h3>
+                <p>{{alert.alert}}</p>
+                <small > Post on: {{alert.post_on}}</small>
+            </div>
+        </div>
         {% endfor %}
+        <hr>
+
+        
+        <div class="container" style="padding: 40px;" >
+            <h4 style="font-weight: bold;">Post an alert</h4><hr>
+            {{form.media}}
+            <form  action="{% url 'home' %}" method="post" enctype="multipart/form-data" id="AlertForm">
+               {%csrf_token%}
+
+               {% bootstrap_form form%}
+               <input  class="btn btn-sm btn-warning" type="submit" value="New Alert">
+            </form>
+        </div>
 
     </div><br><br><hr>
     <h2 style="font-weight: bold;">Directory</h2>
     <a class="btn btn-lg btn-light" href="{% url 'contactlist' %}">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;" id="directory">
         <img class="card-img-top" src="https://images.pexels.com/photos/955081/pexels-photo-955081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="responsive" alt="Card image cap">
         <div class="card-body">
             <p class="card-text">Click for more on contact details for Businesses,Local authorities & Health Centers in {{request.user.profile.neighborhood}}</p>

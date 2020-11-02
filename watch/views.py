@@ -2,14 +2,24 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .models import Profile,Business,Authority,Hospital,Alert
-from .forms import ProfileUpdateForm
+from .forms import ProfileUpdateForm,AlertForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='login/') 
 def home(request):
     neighborhood=request.user.profile.neighborhood
     alerts=Alert.objects.filter(neighborhood=neighborhood).all
-    return render(request,'watch/home.html',{'alerts':alerts})
+    
+    if request.method == 'POST':
+        user=request.user
+        form = AlertForm(request.POST)
+        if form.is_valid():
+            alert=form.save()
+            alert.save()
+
+    else:
+        form=AlertForm
+    return render(request,'watch/home.html',{'form':form,'alerts':alerts})
 
 def contacts(request):
     neighborhood=request.user.profile.neighborhood
