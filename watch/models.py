@@ -25,6 +25,10 @@ class Profile(models.Model):
 class Business(models.Model):
     name=models.CharField(max_length=40)
     neighborhood=models.ForeignKey(Neighborhood, on_delete=models.CASCADE, null=True)
+    contacts=models.CharField(max_length=40, null=True)
+    description=models.CharField(max_length=40,null=True)
+    
+
 
     def __str__(self):
         return self.name

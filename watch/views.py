@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from .models import Profile,Business,Authority,Hospital,Alert
-from .forms import ProfileUpdateForm,AlertForm
+from .forms import ProfileUpdateForm,AlertForm,BusinessForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='login/') 
@@ -27,7 +27,19 @@ def contacts(request):
     hospitals=Hospital.objects.filter(neighborhood=neighborhood).all
     
     businesses=Business.objects.filter(neighborhood=neighborhood).all
-    return render(request,'watch/profile/contactlist.html',{'businesses':businesses,'authorities':authorities,'hospitals':hospitals})
+    
+    if request.method == 'POST':
+        user=request.user
+        form = BusinessForm(request.POST)
+        if form.is_valid():
+            business=form.save()
+            business.save()
+
+    else:
+        form=BusinessForm
+
+
+    return render(request,'watch/profile/contactlist.html',{'businesses':businesses,'authorities':authorities,'hospitals':hospitals,'form':form})
 
 def sign_up(request):
     if request.method =='POST':
