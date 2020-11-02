@@ -38,14 +38,17 @@
 
     </div><br><br><hr>
     <h2 style="font-weight: bold;">DIRECTORY</h2>
-    <a class="btn btn-lg btn-light" href="{% url 'contactlist' %}">
-    <div class="card" style="width: 30rem;" id="directory">
-        <img class="card-img-top" src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="responsive" alt="" style="width:100%">
-        <div class="card-body">
+    <a href="{% url 'contactlist' %}">
+        <div class="container">
+            <img  src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="300px" height="300px" style="border-radius: 50%;">
+        </div><br>
+    </a>
+    <div class="card" id="directory">
+        <div class="card-body text-center" >
             <p class="card-text">Click for more on contact details for Businesses,Local authorities & Health Centers in {{request.user.profile.neighborhood}}</p>
         </div>
     </div>
-    </a>
+    
     {% endif %}
 </div>
 </main>
