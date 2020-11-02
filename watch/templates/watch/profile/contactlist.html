@@ -4,7 +4,7 @@
 <div class="container" style="padding-top: 100px;">
 
     <div class="container">
-        <h2 style="color:white;text-align:center;font-size:xx-large;"><span style="font-weight: bold;">Businesses </span>in {{user.profile.neighborhood}} </h2><br><br>
+        <h2 style="color:white;text-align:center;font-size:xx-large;"><span style="font-weight: bold;">Businesses </span>in {{user.profile.neighborhood}}     <a class="btn btn-sm btn-warning" href="#business">Add New Business</a> </h2><br><br>
         <div >
             {% for business in businesses %}
                 <div class="container">
@@ -50,12 +50,12 @@
             {% endfor %}
         </div>
     </div>
-    <div class="container" style="padding: 40px;" >
+    <div class="container" style="padding: 40px;" id="business">
         <div class="main-agileinfo">
             <div class="agileits-top">  
                 <h2 style="font-weight: bold;color:white">ADD YOUR BUSINESS</h2><hr>
                 {{form.media}}
-                <form  action="{% url 'contactlist' %}" method="post" enctype="multipart/form-data" id="AlertForm" style="color: white;">
+                <form  action="{% url 'contactlist' %}" method="post" enctype="multipart/form-data" id="businessform" style="color: white;">
                 {%csrf_token%}
 
                 {% bootstrap_form form%}

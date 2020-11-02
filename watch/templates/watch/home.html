@@ -11,7 +11,7 @@
         <h1 style="font-weight: bold;color:red">Alerts</h1>
         {% for alert in alerts %}
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" >
                 <h3>{{alert.title}}</h3>
                 <p>{{alert.alert}}</p>
                 <small > Post on: {{alert.post_on}}</small>
@@ -37,10 +37,10 @@
         </div>
 
     </div><br><br><hr>
-    <h2 style="font-weight: bold;">Directory</h2>
+    <h2 style="font-weight: bold;">DIRECTORY</h2>
     <a class="btn btn-lg btn-light" href="{% url 'contactlist' %}">
-    <div class="card" style="width: 18rem;" id="directory">
-        <img class="card-img-top" src="https://images.pexels.com/photos/955081/pexels-photo-955081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="responsive" alt="Card image cap">
+    <div class="card" style="width: 30rem;" id="directory">
+        <img class="card-img-top" src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="responsive" alt="" style="width:100%">
         <div class="card-body">
             <p class="card-text">Click for more on contact details for Businesses,Local authorities & Health Centers in {{request.user.profile.neighborhood}}</p>
         </div>
