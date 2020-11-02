@@ -47,10 +47,11 @@ class Hospital(models.Model):
         return self.name
 
 class Alert(models.Model):
-    name=models.CharField(max_length=40)
+    title=models.CharField(max_length=40)
     neighborhood=models.ForeignKey(Neighborhood, on_delete=models.CASCADE, null=True)
-    news=models.CharField(max_length=300, null=True)
+    alert=models.CharField(max_length=300, null=True)
     post_on = models.DateTimeField(auto_now_add= True,null=True)
 
+
     def __str__(self):
-        return self.name
+        return self.title
