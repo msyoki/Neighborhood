@@ -23,13 +23,17 @@
         
         <div class="container" style="padding: 40px;" >
             <h4 style="font-weight: bold;">Post an alert</h4><hr>
-            {{form.media}}
-            <form  action="{% url 'home' %}" method="post" enctype="multipart/form-data" id="AlertForm">
-               {%csrf_token%}
+            <div class="main-agileinfo">
+                <div class="agileits-top">
+                    {{form.media}}
+                    <form  action="{% url 'home' %}" method="post" enctype="multipart/form-data" id="AlertForm">
+                    {%csrf_token%}
 
-               {% bootstrap_form form%}
-               <input  class="btn btn-sm btn-warning" type="submit" value="New Alert">
-            </form>
+                    {% bootstrap_form form%}
+                    <input  class="btn btn-sm btn-warning" type="submit" value="New Alert">
+                    </form>
+                </div>
+            </div>
         </div>
 
     </div><br><br><hr>
