@@ -28,7 +28,7 @@ the application is under development phase especially so expect some changes
 * BOOTSTRAP4
 * POSTGRESQL
 ## Support and contact details
-Application is still in development phase and still being updated,so keep on checking for updates. In case You have any issues using this code please do not hesitate to get in touch with me through emsyokimutua@gmail.com or leave a comment here on github.
+Application is still in development phase and still being updated,so keep on checking for updates. In case You have any issues using this code please do not hesitate to get in touch with me through msyokimutua@gmail.com or leave a comment here on github.
 
 
 ### License
